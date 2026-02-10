@@ -1,10 +1,10 @@
 {
-  "version": "0.2.0",
+  "version": "0.1.0",
   "notes": "Initial release for desktop app try updater",
   "pub_date": "2026-02-11T10:00:00.000Z",
   "platforms": {
     "darwin-aarch64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTdU5hUXA5KzViSE5mSy80a3pCUEhGcWNJWDAzbnEya01iY3d3by9IZkFCNmtzVm4vdUM5WWxMVksybnJ3Yzc0a1VKRjdBNzZKVWhod0I2WWpLd1dETlRlTzRLMk5ZdndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNzA4MTcwCWZpbGU6TWVldEdlZWsgRGVza3RvcC5hcHAudGFyLmd6CkNLZmFzbk1BeHgxYkN4ZnhMRzd5Uzhvcjd6OThmQjFlR1lXaXVkdW0zaCtoV3RNVkJkUHY5VGNCQkNyWkl5RnlaRjY4TmNIWWoxSTZTM0dtQm9MRERBPT0K",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTdU5hUXA5KzViSEZSNWlLY2RMY2FWSHc2SXZPMG0rQmVHTUkvS1RzSjYwWXZrdFZRb0lMZGIyRFNSVEloVE8yb2ZYL3Vod0RpZVN2QWxrVTFmSm9YMHdJc3gvZm42SHdNPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNzEzOTc4CWZpbGU6TWVldEdlZWsgRGVza3RvcC5hcHAudGFyLmd6CkgzUTVkVStzVnNya1piM0ExZk91OXQrL3kxTUJjZm5ITmJtMWVoZzU4RWVhdWZFRUo2dndUQVRHZTJDN0UxVm1udURuZHlkMUc4dEh5TXgwQTJqMkNnPT0K",
       "url": "https://6de1-110-137-101-173.ngrok-free.app/0.2.0/MeetGeekDesktop020.app.tar.gz"
     }
   }
