@@ -66,9 +66,9 @@ Returns the current update JSON that Tauri apps will check.
 }
 ```
 
-### PUT `/api/updates`
+### POST `/api/updates` or PUT `/api/updates`
 
-Updates the update JSON data.
+Updates the update JSON data. Both POST and PUT methods are supported.
 
 **Request Body:** Same structure as GET response
 
@@ -82,7 +82,29 @@ Updates the update JSON data.
 
 ## Configuration
 
+### Local Development
+
 The update data is stored in `data/updates.json`. This file is created automatically on first save.
+
+### Vercel Deployment
+
+**Important:** Vercel serverless functions have a read-only file system, so file-based storage won't work. You have two options:
+
+#### Option 1: Use Vercel KV (Recommended)
+
+1. Install Vercel KV in your Vercel project dashboard
+2. Add the environment variables:
+   - `KV_REST_API_URL`
+   - `KV_REST_API_TOKEN`
+3. The app will automatically use KV for storage
+
+#### Option 2: Use Environment Variables (Simple but limited)
+
+For a simple setup, you can store the JSON in an environment variable, but this requires manual updates through Vercel's dashboard.
+
+#### Option 3: Use a Database
+
+You can modify the storage layer to use a database like Supabase, PlanetScale, or MongoDB.
 
 ## Tauri Configuration
 
