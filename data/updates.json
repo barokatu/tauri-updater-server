@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "notes": "Initial release for desktop app try updater",
+  "pub_date": "2026-02-11T10:00:00.000Z",
+  "platforms": {
+    "linux-x86_64": {
+      "signature": "",
+      "url": ""
+    },
+    "windows-x86_64": {
+      "signature": "",
+      "url": ""
+    },
+    "darwin-x86_64": {
+      "signature": "",
+      "url": ""
+    },
+    "darwin-aarch64": {
+      "signature": "",
+      "url": "http://localhost:51232/0.3.0/MeetGeekDesktop.app.tar.gz"
+    }
+  }
+}
