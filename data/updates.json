@@ -16,8 +16,8 @@
       "url": ""
     },
     "darwin-aarch64": {
-      "signature": "",
-      "url": "http://localhost:51232/0.3.0/MeetGeekDesktop.app.tar.gz"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTdU5hUXA5KzViSFBmbTdMQWNZK0tDVExXeTBEQ1Y3RzF4cjFJbUFpV1B5RXBmSEJjaC9PdmV4eVZsVXRLZ2dQVkU3bTBFcXZMeXBEdEl0Skt4TTBVQnJOS2ZRdkRKMmdvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzcwNjk3MzMxCWZpbGU6TWVldEdlZWsgRGVza3RvcC5hcHAudGFyLmd6CjV1dFdRdFBWSDlpSUFZYUY5U01yQTZhRmlxNnlyQ0ZTTER2ZG5TQWE2SXBwWHpUeWR2bWVuODdGaGZWaGQ3MGZhN2Y0SUJSbVNTT0FqdjBBbXhrbkRRPT0K",
+      "url": "https://6de1-110-137-101-173.ngrok-free.app/0.2.0/MeetGeekDesktop020.app.tar.gz"
     }
   }
 }
