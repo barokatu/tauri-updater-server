@@ -1,8 +1,49 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { readData, writeData } from '@/lib/storage';
 
+// Generate authorization token from "meetgeek" using base64 encoding
+// In production, use environment variable for the secret
+const AUTH_SECRET = process.env.AUTH_SECRET || 'meetgeek';
+const AUTH_TOKEN = Buffer.from(AUTH_SECRET).toString('base64');
+
+// Validate Authorization header
+function validateAuth(request: NextRequest): boolean {
+  const authHeader = request.headers.get('authorization');
+  
+  if (!authHeader) {
+    return false;
+  }
+
+  // Support Bearer token format: "Bearer <token>"
+  const token = authHeader.startsWith('Bearer ')
+    ? authHeader.substring(7)
+    : authHeader;
+
+  // Decode and validate the token
+  try {
+    const decoded = Buffer.from(token, 'base64').toString('utf-8');
+    return decoded === AUTH_SECRET;
+  } catch (error) {
+    // If decoding fails, check if it's the raw secret (for flexibility)
+    return token === AUTH_SECRET || token === AUTH_TOKEN;
+  }
+}
+
 // GET - Return the updates JSON
-export async function GET() {
+export async function GET(request: NextRequest) {
+  // Validate Authorization header
+  if (!validateAuth(request)) {
+    return NextResponse.json(
+      { error: 'Unauthorized. Missing or invalid Authorization header.' },
+      { 
+        status: 401,
+        headers: {
+          'WWW-Authenticate': 'Bearer',
+        },
+      }
+    );
+  }
+
   try {
     const data = await readData();
     return NextResponse.json(data, {

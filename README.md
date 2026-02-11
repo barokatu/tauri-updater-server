@@ -39,6 +39,12 @@ npm start
 
 Returns the current update JSON that Tauri apps will check.
 
+**Headers:**
+- `Authorization: Bearer <token>` (Required)
+  - The token is base64-encoded "meetgeek" by default
+  - Can be customized via `AUTH_SECRET` environment variable
+  - Example: `Authorization: Bearer bWVldGdlZWs=` (base64 of "meetgeek")
+
 **Response:**
 ```json
 {
@@ -82,6 +88,21 @@ Updates the update JSON data. Both POST and PUT methods are supported.
 
 ## Configuration
 
+### Authentication
+
+The GET endpoint requires an Authorization header. By default, the token is generated from the string "meetgeek" (base64 encoded: `bWVldGdlZWs=`).
+
+You can customize the secret by setting the `AUTH_SECRET` environment variable:
+
+```bash
+AUTH_SECRET=your-secret-key
+```
+
+**Example request:**
+```bash
+curl -H "Authorization: Bearer bWVldGdlZWs=" https://your-domain.com/api/updates
+```
+
 ### Local Development
 
 The update data is stored in `data/updates.json`. This file is created automatically on first save.
@@ -108,7 +129,9 @@ You can modify the storage layer to use a database like Supabase, PlanetScale, o
 
 ## Tauri Configuration
 
-Configure your Tauri app's `tauri.conf.json` to use this server:
+Configure your Tauri app's `tauri.conf.json` to use this server. Note that Tauri updater plugin doesn't support custom headers directly, so you may need to use a proxy or modify the endpoint to include authentication in the URL (not recommended for production) or use a custom update server implementation.
+
+For testing purposes, you can temporarily disable authentication or use a proxy server that adds the Authorization header.
 
 ```json
 {
@@ -122,6 +145,11 @@ Configure your Tauri app's `tauri.conf.json` to use this server:
   }
 }
 ```
+
+**Note:** Since Tauri's updater plugin doesn't support custom headers, you have a few options:
+1. Use a reverse proxy (nginx, Cloudflare Workers) to add the Authorization header
+2. Implement a custom update check endpoint that doesn't require auth (less secure)
+3. Use query parameters with a signed token (requires custom implementation)
 
 ## Supported Platforms
 
